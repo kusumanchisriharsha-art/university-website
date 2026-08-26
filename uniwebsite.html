@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovely Professional University (LPU) | Transforming Education</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f26522;
+            --primary-dark: #d45213;
+            --navy: #1a2b4c;
+            --dark: #222222;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 15px;
+            transition: var(--transition);
+        }
+
+        .top-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-badge {
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 800;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .title {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .logo-text .subtitle {
+            font-size: 0.75rem;
+            color: var(--gray);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .apply-btn {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: var(--transition) !important;
+        }
+
+        .apply-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(26, 43, 76, 0.75), rgba(26, 43, 76, 0.75)), 
+                        url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            padding: 0 5%;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        /* Quick Stats Bar */
+        .stats-bar {
+            background-color: var(--primary);
+            color: var(--white);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            padding: 30px 5%;
+            text-align: center;
+        }
+
+        .stat-item h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 80px 5%;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .program-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .program-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .program-content {
+            padding: 20px;
+        }
+
+        .program-content h3 {
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .program-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .program-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Highlights */
+        .highlights {
+            padding: 80px 5%;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-box {
+            padding: 30px;
+            border-left: 4px solid var(--primary);
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .highlight-box i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .highlight-box h3 {
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 60px 5% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #bdc3c7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div>
+            <i class="fa-solid fa-phone"></i> Admissions Toll Free: 1800 102 4431
+        </div>
+        <div class="top-links">
+            <a href="#">UMS Login</a>
+            <a href="#">LPU Live</a>
+            <a href="#">Alumni</a>
+            <a href="#">Placements</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <div class="logo-badge">LPU</div>
+                <div class="logo-text">
+                    <span class="title">Lovely Professional University</span>
+                    <span class="subtitle">Transforming Education, Transforming India</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Admissions</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="#">Campus Life</a></li>
+                <li><a href="#" class="apply-btn">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Think Big, Study at LPU</h1>
+            <p>Join India's Top Ranked University offering world-class infrastructure, industry-oriented curriculum, and global placement opportunities.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn btn-primary">Admissions 2026</a>
+                <a href="#" class="btn btn-outline">Explore Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <h2>#47</h2>
+            <p>NIRF Ranking Overall</p>
+        </div>
+        <div class="stat-item">
+            <h2>300+</h2>
+            <p>Programs Offered</p>
+        </div>
+        <div class="stat-item">
+            <h2>30,000+</h2>
+            <p>Students on Campus</p>
+        </div>
+        <div class="stat-item">
+            <h2>3 crore</h2>
+            <p>Highest Package</p>
+        </div>
+    </section>
+
+    <!-- Featured Programs -->
+    <section class="programs">
+        <div class="section-title">
+            <h2>Popular Disciplines</h2>
+            <p>Explore a wide variety of undergraduate, postgraduate, and doctoral degree programs.</p>
+        </div>
+
+        <div class="program-grid">
+            <div class="program-card">
+                <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="program-content">
+                    <h3>Engineering & Tech</h3>
+                    <p>Computer Science, AI, Robotics, Mechanical, Civil and Electronics Engineering.</p>
+                    <a href="#" class="program-link">View Courses <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="program-content">
+                    <h3>Management & B-School</h3>
+                    <p>MBA, BBA, International Business, Supply Chain, and Financial Markets.</p>
+                    <a href="#" class="program-link">View Courses <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="program-content">
+                    <h3>Pharmacy & Healthcare</h3>
+                    <p>PCI approved Pharmaceutical Sciences, Nursing, and Allied Health Sciences.</p>
+                    <a href="#" class="program-link">View Courses <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="program-content">
+                    <h3>Design & Architecture</h3>
+                    <p>Fashion Design, Architecture, Interior Design, and Fine Arts programs.</p>
+                    <a href="#" class="program-link">View Courses <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Highlights -->
+    <section class="highlights">
+        <div class="section-title">
+            <h2>Why Choose LPU?</h2>
+            <p>Empowering students to achieve their academic and professional ambitions.</p>
+        </div>
+
+        <div class="highlight-grid">
+            <div class="highlight-box">
+                <i class="fa-solid fa-trophy"></i>
+                <h3>Top Rankings</h3>
+                <p>Recognized globally and nationally by NAAC A++ accreditation and top NIRF rankings.</p>
+            </div>
+
+            <div class="highlight-box">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3>Unbeatable Placements</h3>
+                <p>2000+ top brands recruit from LPU, offering industry-leading compensation packages.</p>
+            </div>
+
+            <div class="highlight-box">
+                <i class="fa-solid fa-globe"></i>
+                <h3>Global Exposure</h3>
+                <p>Tie-ups with 300+ foreign universities across the US, UK, Canada, and Europe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Jalandhar - Delhi G.T. Road,</li>
+                    <li>Phagwara, Punjab (India)-144411</li>
+                    <li>Email: info@lpu.co.in</li>
+                    <li>Phone: +91-1824-517000</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Admissions</h4>
+                <ul>
+                    <li><a href="#">LPUNEST Exam</a></li>
+                    <li><a href="#">Scholarships</a></li>
+                    <li><a href="#">Fee Structure</a></li>
+                    <li><a href="#">How to Apply</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Campus Virtual Tour</a></li>
+                    <li><a href="#">Research & Patents</a></li>
+                    <li><a href="#">Distance Education</a></li>
+                    <li><a href="#">Careers at LPU</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Lovely Professional University. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
